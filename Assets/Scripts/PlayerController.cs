@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Coin")
+        {
+            Destroy(other.gameObject);//destry the collectable object
+        }
+    }
     private void FixedUpdate() //use fixed update for physics movements
     {
         float moveHorizontal = Input.GetAxis("Horizontal"); //getting the input from the arrow keys
